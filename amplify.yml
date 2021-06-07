@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - yarn install
-        - sudo yum install -y java-11-amazon-corretto-devel
+        - yum install -y java-11-amazon-corretto-devel
         - java -version
     build:
       commands:
