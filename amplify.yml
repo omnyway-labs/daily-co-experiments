@@ -8,6 +8,7 @@ frontend:
         - curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
         - yum install -y java-11-amazon-corretto-devel
         - java -version
+        - npx ci
     build:
       commands:
         - yarn run build
