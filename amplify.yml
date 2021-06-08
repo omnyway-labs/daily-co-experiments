@@ -4,7 +4,9 @@ frontend:
     preBuild:
       commands:
         - yarn install
-        - yum install java-11-amazon-corretto-headless
+        - rpm --import https://yum.corretto.aws/corretto.key
+        - curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+        - yum install -y java-11-amazon-corretto-devel
         - java -version
     build:
       commands:
