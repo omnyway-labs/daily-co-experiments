@@ -6,7 +6,7 @@
         "sc": "shadow-cljs",
         "server": "shadow-cljs stop && shadow-cljs start",
         "start": "shadow-cljs -A:dev watch app",
-        "build": "yarn clean && shadow-cljs -a:prod release app",
+        "build": "yarn clean && shadow-cljs -A:prod release app",
         "report": "shadow-cljs run shadow.cljs.build-report app report.html",
         "lint": "clj-kondo --lint src",
         "clean": "shx rm -rf dist/",
@@ -14,7 +14,7 @@
     },
     "devDependencies": {
         "clj-kondo": "2021.4.23",
-        "shadow-cljs": "~2.14.2",
+        "shadow-cljs": "~2.14.4",
         "shx": "~0.3.3",
         "ci": "~2.1.1",
         "zprint-clj": "~0.8.0"
