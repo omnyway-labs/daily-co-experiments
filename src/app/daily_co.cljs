@@ -46,17 +46,6 @@
      (.on "live-streaming-started", show-event)
      (.on "live-streaming-stopped", show-event);
      )))
-;; (->
-;;  (.createFrame DailyIframe  call-wrapper)
-;;  (.then (fn [callFrame]
-;;           (reset! call-frame callFrame)
-;;           (->
-;;            ((.-on callFrame) "loaded" loaded)
-;;            (.on "started-camera" started-camera)
-;;            (.on "camera-error" camera-error)
-;;            (.on "joining-meeting" joining-meeting)
-;;            (.on "joined-meeting" joined-meeting)
-;;            (.on "left-meeting" left-meeting))))))
 
 (defn join-room
   "Join the room using the supplied room url

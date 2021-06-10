@@ -3,7 +3,6 @@
   (:require [reagent.core :as r]
             [reagent.dom :as rd]
             [refn.core :as rf :refer [<< >>]] ;; Using refn wrapper for re-frame
-            [app.hello :refer [hello]]
             [app.call :refer [call]]))
 
 (def default-db

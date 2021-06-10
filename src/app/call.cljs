@@ -36,9 +36,7 @@
   (let [call-wrapper-ref (atom nil)]
     (fn []
       (let [call-ready (and @call-wrapper-ref @d/call-frame )]
-        ;; (js/console.log "Top of call  @call-wrapper-ref: ", @call-wrapper-ref " call-frame: ", @d/call-frame)
         (when (and @call-wrapper-ref (not @d/call-frame))
-          ;; (js/console.log "calling create-call-frame @call-wrapper-ref: ", @call-wrapper-ref " call-frame: ", @d/call-frame)
           (let [result (d/create-call-frame @call-wrapper-ref {:show-event show-event
                                                                :loaded show-event
                                                                :started-camera show-event
@@ -67,11 +65,10 @@
                             :controlId "room-url"}
              [:> Col {:sm 3}
               [:> Form.Label "Room URL"]]
-             [:> Col 
+             [:> Col
               [:> Form.Control {:defaultValue (<< [:room-url])
                                 :onChange (fn [e]
                                             (let [value (-> e .-target .-value)]
-                                              ;; (js/console.log "form onchange room-url: ", value)
                                               (>> [:room-url value])))}]]]
 
             [:> Form.Group {:as Row
@@ -83,7 +80,6 @@
                                 :defaultValue (<< [:meeting-token])
                                 :onChange (fn [e]
                                             (let [value (-> e .-target .-value)]
-                                              ;; (js/console.log "form onchange meeting-token: ", value)
                                               (>> [:meeting-token value])))}]]]
 
             [:> Form.Group {:as Row
@@ -94,7 +90,6 @@
               [:> Form.Control {:defaultValue (<< [:rtmp-url])
                                 :onChange (fn [e]
                                             (let [value (-> e .-target .-value)]
-                                              ;; (js/console.log "form onchange rtmp-url: ", value)
                                               (>> [:rtmp-url value])))}]]]
             [:> Form.Group {:as Row
                             :controlId "rtmp-session-key"}
@@ -104,7 +99,6 @@
               [:> Form.Control {:defaultValue (<< [:rtmp-session-key])
                                 :onChange (fn [e]
                                             (let [value (-> e .-target .-value)]
-                                              ;; (js/console.log "form onchange rtmp-session-key: ", value)
                                               (>> [:rtmp-session-key value])))}]]]]
 
            [:> Row
@@ -116,7 +110,6 @@
                                                    :meeting-token (<< [:meeting-token])})
                                      )} "Start Call"]]
             [:> Col {:sm "auto"}
-             ;; (js/console.log "rtmp-full-url: " (<< [:rtmp-full-url]))
              [:> Button {:id "start-streaming"
                          :variant "success"
                          :disabled (not (and call-ready (<< [:rtmp-full-url])))
@@ -139,5 +132,4 @@
                                      (status-update :reset nil)
                                      ;; This is to force a refresh of the page
                                      (>> [:inc-reset-count])
-                                     )} "Reset Call"]]]]]]
-        ))))
+                                     )} "Reset Call"]]]]]]))))
