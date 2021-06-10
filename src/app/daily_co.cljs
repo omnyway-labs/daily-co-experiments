@@ -1,11 +1,9 @@
 (ns app.daily-co
   (:require
-   ;;   ["@daily-co/daily-js/dist/daily-iframe-esm.js" :default DailyIframe])
    ["@daily-co/daily-js" :default DailyIframe])
   )
 
 (js/console.log "DailyIframe: " DailyIframe)
-;; (js/console.log "createFrame: " createFrame)
 (defonce call-frame (atom nil))
 
 (defn create-call-frame [call-wrapper {:keys [show-event
@@ -81,8 +79,5 @@
 (defn stop-live-streaming []
   (js/console.log ::stop-live-streaming)
   (.stopLiveStreaming ^js/DailyIframe.callFrame @call-frame))
-;;
-;; Event listener callbacks and helpers
-;;
 
 
