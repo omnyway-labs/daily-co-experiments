@@ -9,7 +9,7 @@
         "build": "yarn clean && shadow-cljs -A:prod release app",
         "report": "shadow-cljs run shadow.cljs.build-report app report.html",
         "lint": "clj-kondo --lint src",
-        "clean": "shx rm -rf dist/",
+        "clean": "shx rm -rf resource/public/js/compiled",
         "format": "zprint-clj --hang -i \"./src/**/*.{clj,cljs,cljc,edn}\" -o ./ && zprint-clj -i \"./*.edn\" -o ./"
     },
     "devDependencies": {
