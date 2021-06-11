@@ -19,7 +19,6 @@ frontend:
     baseDirectory: resources/public/
     files:
       - '**/*'
-      - 'js/compiled/*'
   cache:
     paths:
       - node_modules/**/*
