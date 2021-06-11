@@ -15,11 +15,10 @@ frontend:
       commands:
         - yarn run build
   artifacts:
-    # IMPORTANT - Please verify your build output directory
-    baseDirectory: /
+    # IMPORTANT - dist needs to have things from  resources/public/* symlinked to dist except for js/compiled
+    baseDirectory: dist/
     files:
-      - 'resource/public/**/*'
-      - 'dist/**/*'
+      - '**/*'
   cache:
     paths:
       - node_modules/**/*
