@@ -18,7 +18,8 @@ frontend:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: resources/public/
     files:
-      - '**'
+      - '**/*'
+      - 'js/compiled/*'
   cache:
     paths:
       - node_modules/**/*
